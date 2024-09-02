@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .text {
+            margin-left: 20px;
+        }
+        .button-container {
+            background-color: aquamarine;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px; /* Отступ снизу */
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="Beglov1.jpg" height="350" class="hidden">
+        <img src="Beglov2.jpg" height="350" class="hidden">
+    </div>
+    <button class="text" id="revealButton" onclick="showContent()"><b>Узнать кто настоящий губернатор Петербурга</b></button>
+    <div class="button-container hidden" id="successMessage">
+        <p><b>Ура!!</b></p>
+    </div>
+
+    <script>
+        function showContent() {
+            const images = document.querySelectorAll('.container img');
+            images.forEach(img => {
+                img.classList.remove('hidden');
+            });
+            document.getElementById('successMessage').classList.remove('hidden');
+            document.getElementById('revealButton').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
